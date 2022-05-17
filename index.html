@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--Code Property of Deep Hiren Kotecha 19BCE2301-->
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#test").hide();
+  });
+});
+</script>
+<style media="screen">
+  button{
+    height:50px;
+    width:50px;
+    background-color:yellow;
+    font-size: 20px;
+  }
+  button:hover{
+    opacity:0.7
+  }
+  p{
+    background-color:lightgreen;
+    border: 2px solid;
+    height:20x;
+    width:300px;
+    margin-left:6%;
+  }
+  .buttons{
+    list-style-type:none;
+
+  }
+  .row1{
+    display:inline;
+  }
+  .row2{
+    display:inline;
+  }
+  .row3{
+    display:inline;
+  }
+  .row4{
+    display:inline;
+  }
+  .row1 li{
+    list-style-type:none;
+    display:inline-block;
+    padding:10px;
+  }
+  .row2 li{
+    list-style-type:none;
+    display:inline-block;
+    padding:10px;
+  }
+  .row3 li{
+    list-style-type:none;
+    display:inline-block;
+    padding:10px;
+  }
+  .row4 li{
+    list-style-type:none;
+    display:inline-block;
+    padding:10px;
+  }
+  #AC{
+    background-color:orange;
+  }
+  #oppplus{
+    background-color:skyblue;
+  }
+  #oppsubtract{
+    background-color:skyblue;
+  }
+  #oppmultiply{
+    background-color:skyblue;
+  }
+  #oppdivide{
+    background-color:skyblue;
+  }
+  #oppequal{
+    background-color:lightgreen;
+  }
+
+</style>
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    var expression='';
+    var result=0;
+    var oppset=0;
+    var opval='';
+    var ans=0;
+    $("#num7").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"7";
+      document.getElementById('expression').innerHTML=expression;
+    });
+
+    $("#num8").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"8";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num9").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"9";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num4").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"4";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num5").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"5";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num6").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"6";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num1").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"1";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num2").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"2";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num3").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"3";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#num0").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"0";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#AC").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=" ";
+      result=" "
+      document.getElementById('expression').innerHTML=expression;
+      document.getElementById('result').innerHTML=result;
+    });
+    $("#oppplus").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"+";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#oppsubtract").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"-";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#oppmultiply").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"*";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#oppdivide").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      expression=expression+"/";
+      document.getElementById('expression').innerHTML=expression;
+    });
+    $("#oppequal").click(function(){
+      expression=document.getElementById('expression').innerHTML;
+      let plusind=0;
+      let subtractind=0;
+      let multiplyind=0;
+      let divideind=0;
+      let num1=0;
+      let num2=0;
+      plusind=expression.indexOf('+');
+      subtractind=expression.indexOf('-');
+      multiplyind=expression.indexOf('*');
+      divideind=expression.indexOf('/');
+      var resultArr;
+      if(plusind>0){
+        resultArr=expression.split("+");
+        num1=parseInt(resultArr[0]);
+        num2=parseInt(resultArr[1]);
+        document.getElementById('result').innerHTML=num1+num2;
+      }else if(subtractind>0){
+        resultArr=expression.split("-");
+        num1=parseInt(resultArr[0]);
+        num2=parseInt(resultArr[1]);
+        document.getElementById('result').innerHTML=num1-num2;
+      }else if(multiplyind>0){
+        resultArr=expression.split("*");
+        num1=parseInt(resultArr[0]);
+        num2=parseInt(resultArr[1]);
+        document.getElementById('result').innerHTML=num1*num2;
+      }else if(divideind>0){
+        resultArr=expression.split("/");
+        num1=parseInt(resultArr[0]);
+        num2=parseInt(resultArr[1]);
+        document.getElementById('result').innerHTML=num1/num2;
+      }
+      //document.getElementById('result').innerHTML=resultArr;
+    });
+  });
+
+</script>
+</head>
+<body>
+
+<h2>Calculator</h2><br>
+
+  <h3>Expression</h3><p id="expression"></p><br><br>
+  <h3>Result</h3><p id="result"></p>
+  <ul class="buttons">
+    <li><ul class="row1">
+      <li><button type="button" id="num7">7</button></li>
+      <li><button type="button" id="num8">8</button></li>
+      <li><button type="button" id="num9">9</button></li>
+      <li><button type="button" id="oppdivide">/</button></li>
+
+    </ul></li>
+    <li><ul class="row2">
+      <li><button type="button" id="num4">4</button></li>
+      <li><button type="button" id="num5">5</button></li>
+      <li><button type="button" id="num6">6</button></li>
+      <li><button type="button" id="oppmultiply">*</button></li>
+
+    </ul></li>
+    <li><ul class="row3">
+      <li><button type="button" id="num1">1</button></li>
+      <li><button type="button" id="num2">2</button></li>
+      <li><button type="button" id="num3">3</button></li>
+      <li><button type="button" id="oppsubtract">-</button></li>
+
+    </ul></li>
+    <li><ul class="row4">
+      <li><button type="button" id="AC">AC</button></li>
+      <li><button type="button" id="num0">0</button></li>
+      <li><button type="button" id="oppequal">=</button></li>
+      <li><button type="button" id="oppplus">+</button></li>
+
+    </ul></li>
+
+  </ul>
+
+
+</body>
+</html>
