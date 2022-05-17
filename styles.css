@@ -1,0 +1,66 @@
+h2{
+  color:green;
+}
+body{
+  background-size: Cover;
+  background-color: #bdd6fc;
+}
+img{
+  width:20%;
+  height: auto;
+}
+form{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding: 20px;
+  background-color: #baffe8;
+  border-radius: 10px;
+}
+
+form h3{
+  Color:Blue;
+}
+
+form label{
+  color:blue;
+}
+form input{
+  width:300px;
+  height:auto;
+}
+
+input:required {
+  border: 1px dashed red;
+}
+input:optional {
+  border: 1px dashed grey;
+}
+input:valid {
+  background-color: #c7dcff;
+}
+input:invalid{
+  background-color: #ffc7c7;
+}
+input:focus {
+  background-color: yellow;
+}
+input:in-range {
+  background-color: orange;
+}
+#submit{
+  background-color: white;
+  width:100px;
+  height: auto;
+}
+#submit:hover{
+  background-color: yellow;
+}
+
+#phone:enabled{
+  background-color: white;
+}
+#email:disabled{
+  background-color: green;
+}
